@@ -93,5 +93,4 @@ function computeAll() {
     let height = inputHeight.value;
     perimeter.value = 2 * (+width + +height);
     area.value = +width * +height;
-
 }

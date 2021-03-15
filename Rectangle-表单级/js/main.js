@@ -8,6 +8,18 @@ let compute = document.getElementById("compute");
 
 let Tips = document.getElementById("alert");
 
+inputHeight.onblur = function () {
+    if ( this.value ==='') {
+        this.value = 0;
+    }
+};
+
+inputWidth.onblur = function () {
+    if ( this.value ==='') {
+        this.value = 0;
+    }
+};
+
 compute.addEventListener("click", computeAll);
 
 function computeAll() {

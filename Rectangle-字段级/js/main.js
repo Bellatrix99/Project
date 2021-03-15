@@ -25,6 +25,9 @@ inputHeight.onblur = function () {
         }
         NaNError = !NaNError;
     }
+    if (this.value === '') {
+        this.value = 0;
+    }
 
 };
 
@@ -43,6 +46,9 @@ inputWidth.onblur = function () {
         }
         NaNError = !NaNError;
     }
+    if (this.value === '') {
+        this.value = 0;
+    }
 };
 
 compute.addEventListener("click", computeAll);
@@ -52,8 +58,10 @@ function computeAll() {
     if (!NaNError) {
         let width = inputWidth.value;
         let height = inputHeight.value;
-        perimeter.value = 2 * (+width + +height);
-        area.value = +width * +height;
+        if (!isNaN(width) && !isNaN(height) && width != 0 && height != 0) {
+            perimeter.value = 2 * (+width + +height);
+            area.value = +width * +height;
+        }
     }
 
 }
